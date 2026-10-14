@@ -1,103 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>张的秘密</title>
     <meta charset="utf-8">
 
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:"Microsoft YaHei";
-        }
 
         body{
-            height:100vh;
-            background:
-            linear-gradient(
-            rgba(0,0,0,0.6),
-            rgba(0,0,0,0.8)
-            ),
-            url("https://picsum.photos/1920/1080");
-            background-size:cover;
-            background-position:center;
-            color:white;
+            margin:0;
+            padding:0;
+            background:#f5f5f5;
+            font-family:"Microsoft YaHei";
+            color:#333;
         }
 
 
-        .container{
-            width:80%;
-            margin:auto;
-            padding-top:80px;
+        .box{
+            width:700px;
+            margin:80px auto;
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.1);
             text-align:center;
         }
 
 
         h1{
-            font-size:50px;
-            letter-spacing:8px;
-            color:#fff;
-            text-shadow:
-            0 0 10px #00ffff,
-            0 0 20px #00ffff;
+            font-size:40px;
+            font-weight:normal;
+            margin-bottom:15px;
         }
 
 
-        .subtitle{
-            margin-top:20px;
-            font-size:20px;
-            color:#ddd;
+        .intro{
+            color:#777;
+            font-size:18px;
+        }
+
+
+        .line{
+            width:80px;
+            height:3px;
+            background:#333;
+            margin:25px auto;
+        }
+
+
+        .content{
+            text-align:left;
+            line-height:2;
+            font-size:16px;
         }
 
 
         .card{
-            margin:50px auto;
-            width:600px;
-            padding:30px;
-            background:
-            rgba(255,255,255,0.1);
-            border-radius:20px;
-            backdrop-filter:blur(10px);
-            box-shadow:
-            0 0 30px rgba(0,255,255,0.3);
-        }
-
-
-        .card h2{
-            margin-bottom:20px;
-            color:#00ffff;
-        }
-
-
-        .secret{
-            line-height:2;
-            font-size:18px;
+            margin-top:30px;
+            padding:20px;
+            background:#fafafa;
+            border-radius:10px;
         }
 
 
         button{
-            margin-top:30px;
-            padding:12px 35px;
+            margin-top:25px;
+            padding:10px 30px;
             border:none;
-            border-radius:30px;
-            background:#00ffff;
-            color:#111;
-            font-size:18px;
+            border-radius:20px;
+            background:#333;
+            color:white;
             cursor:pointer;
         }
 
 
         button:hover{
-            background:white;
-            transform:scale(1.05);
+            background:#555;
         }
 
 
         footer{
-            margin-top:50px;
-            color:#aaa;
+            margin-top:40px;
+            font-size:14px;
+            color:#999;
         }
+
 
     </style>
 
@@ -106,35 +93,55 @@
 
 <body>
 
-<div class="container">
+
+<div class="box">
 
     <h1>张的秘密</h1>
 
-    <p class="subtitle">
-        一个只属于自己的神秘空间
+    <p class="intro">
+        记录一些属于我的故事
     </p>
 
 
-    <div class="card">
-
-        <h2>🌙 关于我</h2>
-
-        <p class="secret">
-            欢迎来到张的秘密世界。<br>
-            这里记录我的想法、故事和珍贵回忆。<br>
-            每一个秘密，都值得被珍藏。
-        </p>
+    <div class="line"></div>
 
 
-        <button>
-            打开秘密
-        </button>
+    <div class="content">
+
+        <div class="card">
+            <h3>关于这里</h3>
+
+            <p>
+                这是我的个人小空间。<br>
+                这里会放一些想法、照片，
+                还有值得记录的事情。
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>最近</h3>
+
+            <p>
+                今天也在努力生活。<br>
+                慢慢积累，慢慢成长。
+            </p>
+
+        </div>
+
 
     </div>
 
 
+    <button>
+        查看更多
+    </button>
+
+
     <footer>
-        © 2026 张的秘密 · My Secret World
+        © 2026 张的秘密
     </footer>
 
 
@@ -142,4 +149,5 @@
 
 
 </body>
+
 </html>
