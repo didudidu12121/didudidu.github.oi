@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff8f1">
+<title>基米的小天地 🐾</title>
+<style>
+:root{--cream:#fff8f1;--paper:#fffdf9;--pink:#f4a8b9;--deep:#df718f;--ink:#58473f;--muted:#8e7d73;--line:#f0e3d9;--mint:#e6f0e8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;line-height:1.7}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+header{position:sticky;top:0;z-index:5;background:#fffdf9ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}nav{max-width:1120px;margin:auto;padding:13px 22px;display:flex;justify-content:space-between;align-items:center;gap:18px}.brand{font-size:1.15rem;font-weight:800;white-space:nowrap}.brand span{color:var(--deep)}.links{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}.links a:hover{color:var(--deep)}
+.hero{max-width:1120px;margin:25px auto 0;padding:0 20px}.hero-inner{display:grid;grid-template-columns:.85fr 1.15fr;min-height:420px;overflow:hidden;border-radius:28px;background:#f6e8dc;box-shadow:0 15px 42px #76543d12}.hero-copy{padding:clamp(28px,5vw,60px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;background:linear-gradient(110deg,#fff7ef 0%,#fff7efed 75%,#fff7ef00)}.eyebrow{color:var(--deep);font-weight:700;letter-spacing:.12em;font-size:.84rem}h1{font-size:clamp(3rem,7vw,5.1rem);line-height:1.08;margin:14px 0;letter-spacing:.04em}.hero-copy p{color:var(--muted);max-width:330px;margin:0 0 24px}.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:11px 19px;background:var(--pink);color:white;box-shadow:0 7px 18px #e879982b;transition:.2s}.btn:hover{transform:translateY(-2px);background:var(--deep)}.hero-image{position:relative;min-height:420px}.hero-image img{position:absolute;width:100%;height:100%;inset:0;object-fit:cover}.sticker{position:absolute;right:16px;bottom:16px;background:#fffdf0e8;border-radius:15px;padding:9px 14px;transform:rotate(-4deg)}
+main{max-width:1120px;margin:auto;padding:28px 20px 55px}.heading{display:flex;justify-content:space-between;align-items:end;gap:14px;margin:24px 0 17px}.heading h2{margin:0;font-size:clamp(1.45rem,3vw,2rem)}.heading p{margin:4px 0 0;color:var(--muted);font-size:.93rem}.tag{background:#fce5eb;color:#a95772;border-radius:999px;padding:6px 12px;font-size:.82rem;white-space:nowrap}
+.grid-intro{display:grid;grid-template-columns:1fr 1.2fr;gap:17px}.card{background:var(--paper);border:1px solid #f1e6dd;border-radius:22px;padding:23px;box-shadow:0 9px 28px #795a450c}.profile{display:flex;align-items:center;gap:15px}.avatar{width:92px;height:92px;flex-shrink:0;border:5px solid #fff0f3;border-radius:50%;overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover}.card h3{margin:0 0 8px}.profile p,.facts-card p{margin:3px 0;color:var(--muted);font-size:.93rem}.note{background:#fff1f2;border-radius:15px;padding:12px 14px;margin-top:18px;color:#9e6571}.facts{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}.fact{background:white;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:.9rem}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.photo{margin:0;padding:9px;background:var(--paper);border:1px solid var(--line);border-radius:19px;box-shadow:0 8px 22px #795a450b;cursor:zoom-in;transition:transform .2s}.photo:hover{transform:translateY(-4px) rotate(-.3deg)}.photo img{width:100%;height:230px;display:block;object-fit:cover;border-radius:12px;background:#f2e8df}.caption{padding:10px 5px 5px}.caption strong{display:block;font-size:.96rem}.caption span{font-size:.83rem;color:var(--muted)}
+.fun-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.quote-card{background:#fff0f2}.love-card{background:var(--mint)}.quote-text{font-weight:700;font-size:1.18rem;margin:8px 0 15px}.small-btn{border:1px solid #e8d5d0;background:white;border-radius:999px;padding:9px 14px;color:var(--ink)}.love-card p{color:#65786b}.paw-row{font-size:1.3rem;letter-spacing:.25em;color:#d9a3ac}
+footer{text-align:center;padding:27px 20px 40px;color:var(--muted);font-size:.9rem}.heart{color:var(--deep)}
+.lightbox{display:none;position:fixed;inset:0;z-index:20;background:#241b1de8;align-items:center;justify-content:center;padding:22px}.lightbox.open{display:flex}.lightbox img{max-width:100%;max-height:86vh;object-fit:contain;border-radius:12px}.close{position:absolute;top:15px;right:18px;border:0;border-radius:50%;width:44px;height:44px;background:white;color:var(--ink);font-size:1.6rem}.toast{position:fixed;z-index:30;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:#58473f;color:white;border-radius:999px;padding:10px 17px;transition:.25s;pointer-events:none;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}.float{position:fixed;z-index:25;pointer-events:none;animation:rise 1.35s ease-out forwards;font-size:22px}@keyframes rise{0%{opacity:0;transform:translateY(0) scale(.7)}20%{opacity:1}100%{opacity:0;transform:translateY(-95px) scale(1.3) rotate(18deg)}}
+@media(max-width:800px){nav{align-items:flex-start;flex-direction:column;padding:12px 17px}.links{gap:13px;font-size:.86rem}.hero{padding:0 13px;margin-top:14px}.hero-inner{grid-template-columns:1fr}.hero-image{grid-row:1;min-height:300px}.hero-copy{padding:26px;background:#fff7ef}.hero-copy h1{font-size:3.3rem}main{padding:20px 13px 42px}.grid-intro,.fun-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.photo img{height:220px}.heading{align-items:flex-start;flex-direction:column}}
+@media(max-width:430px){.gallery{grid-template-columns:1fr}.photo img{height:260px}.card{padding:18px}.profile{align-items:flex-start}.avatar{width:78px;height:78px}}
+  
+/* 基米的成长纪念册美化 */
+.growth-stage {
+  position: relative;
+  margin: 30px 0;
+  padding: 25px;
+  background: linear-gradient(145deg, #fffdf9, #fff3f5);
+  border: 1px solid #f2e0df;
+  border-radius: 25px;
+  box-shadow: 0 12px 32px #795a450b;
+}
+
+.growth-stage h3 {
+  margin: 0;
+  color: #a95772;
+  font-size: 1.3rem;
+  letter-spacing: .03em;
+}
+
+.growth-stage > p {
+  margin: 5px 0 20px;
+  color: #8e7d73;
+  font-size: .92rem;
+}
+
+.growth-stage .gallery {
+  gap: 18px;
+}
+
+.growth-stage .photo {
+  border-radius: 17px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.growth-stage .photo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px #df718f20;
+}
+
+.growth-stage .photo img {
+  border-radius: 11px;
+}
+
+.growth-stage .caption {
+  padding: 12px 6px 7px;
+}
+
+.growth-stage .caption strong {
+  color: #58473f;
+}
+
+.growth-stage .caption span {
+  display: block;
+  margin-top: 3px;
+  line-height: 1.6;
+}
+
+.growth-stage .photo:focus-visible,
+.btn:focus-visible,
+.small-btn:focus-visible {
+  outline: 3px solid #df718f;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .growth-stage {
+    margin: 22px 0;
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .growth-stage .gallery {
+    gap: 10px;
+  }
+
+  .growth-stage .photo img {
+    height: 190px;
+  }
+}
+
+</style>
+</head>
+<body>
+<header><nav><a class="brand" href="#home">🐾 基米 <span>的小天地</span></a><div class="links"><a href="#home">首页</a><a href="#about">关于基米</a><a href="#gallery">日常相册</a><a href="#fun">互动角落</a></div></nav></header>
+<section class="hero" id="home"><div class="hero-inner">
+<div class="hero-copy"><div class="eyebrow">WELCOME TO KIMI'S WORLD</div><h1>基米<br>的小天地 <span style="color:#df718f">♡</span></h1><p>这里收藏着一只小猫咪的日常，也收藏着我们一起度过的温柔时光。</p><a class="btn" href="#gallery">🐾 看看基米的日常 →</a></div>
+<div class="hero-image"><img src="images/kimi-hero.jpg" alt="基米盖着脸、吐着小舌头睡觉"><div class="sticker">嘘——基米正在充电中 ☁️</div></div>
+</div></section>
+<main>
+<section id="about"><div class="heading"><div><h2>认识一下这位小主子</h2><p>她叫基米，是我们家的可爱担当。</p></div><span class="tag">今日可爱指数：满分 ♡</span></div>
+<div class="grid-intro"><article class="card"><div class="profile"><div class="avatar"><img src="images/kimi-grooming.jpg" alt="基米原图"></div><div><h3>基米 · Kimi</h3><p>身份：家里的小宝贝</p><p>特长：睡觉、舔爪爪、可爱</p><p>日常：认真生活，偶尔调皮</p></div></div><div class="note">“我不是什么大人物，只是你们生活里，毛茸茸的小幸福。” ♡</div></article>
+<article class="card facts-card"><h3>基米的小习惯 ✨</h3><p>每只猫都有自己的小宇宙。这里先收藏基米的可爱日常，以后还可以慢慢补上她真正的喜好和故事。</p><div class="facts"><span class="fact">💤 睡觉充电中</span><span class="fact">🐾 爪爪护理大师</span><span class="fact">👑 家里的小主子</span><span class="fact">💗 可爱不打烊</span></div></article></div></section>
+<section id="gallery"><div class="heading"><div><h2>基米的日常相册</h2><p>每一个小瞬间，都值得好好收藏。点击照片可以放大哦。</p></div><span class="tag">4 张专属原图 📷</span></div>
+
+<div class="growth-stage">
+<h3>🌱 初来乍到</h3>
+<p>初次相遇，收藏最初的可爱。</p>
+<div class="gallery">
+<figure class="photo" tabindex="0" role="button" data-full="images/kimi-hero.jpg"><img src="images/kimi-hero.jpg" alt="基米盖着脸睡觉，吐出一点小舌头" loading="lazy"><figcaption class="caption"><strong>睡觉也要摆个可爱姿势</strong><span>嘘，正在做美梦呢 ☁️</span></figcaption></figure>
+</div>
+</div>
+
+<div class="growth-stage">
+<h3>🐾 慢慢长大</h3>
+<p>每天都在长大，每天都有新发现。</p>
+<div class="gallery">
+<figure class="photo" tabindex="0" role="button" data-full="images/kimi-grooming.jpg"><img src="images/kimi-grooming.jpg" alt="基米伸出舌头舔爪子" loading="lazy"><figcaption class="caption"><strong>认真打理小爪爪</strong><span>精致小猫咪的日常 ✨</span></figcaption></figure>
+</div>
+</div>
+
+<div class="growth-stage">
+<h3>💗 现在的基米</h3>
+<p>把平凡的日子，也过成值得收藏的回忆。</p>
+<div class="gallery">
+<figure class="photo" tabindex="0" role="button" data-full="images/kimi-sleep.jpg"><img src="images/kimi-sleep.jpg" alt="基米闭着眼睛安静睡觉" loading="lazy"><figcaption class="caption"><strong>午后小憩</strong><span>今天也要睡得香香的</span></figcaption></figure>
+<figure class="photo" tabindex="0" role="button" data-full="images/kimi-dream.jpg"><img src="images/kimi-dream.jpg" alt="基米仰着脸安静睡着" loading="lazy"><figcaption class="caption"><strong>睡梦里的小天使</strong><span>愿每个梦都甜甜的 ♡</span></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section id="fun"><div class="heading"><div><h2>互动小角落</h2><p>来和基米玩一下吧！</p></div><span class="tag">喵喵互动中</span></div>
+<div class="fun-grid"><article class="card quote-card"><div class="paw-row">🐾 ♡ 🐾</div><h3>今日基米语录</h3><div class="quote-text" id="quote">“先睡一觉，醒来再说喵。”</div><button class="small-btn" id="quoteBtn">再听一句喵 💬</button></article>
+<article class="card love-card"><div style="font-size:1.6rem">💗 🐈 💗</div><h3>给基米一点爱</h3><p>点一下按钮，让小爪印和爱心飞起来！</p><button class="btn" id="loveBtn">摸摸基米的头 ♡</button><p id="count" aria-live="polite">已经摸摸了 0 次</p></article></div></section>
+</main><footer><div class="paw-row">🐾　♡　🐾</div><p>谢谢你来参观基米的小天地</p><p>由家人用 <span class="heart">♥</span> 慢慢收藏每一天</p></footer>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="照片大图"><button class="close" id="close" aria-label="关闭大图">×</button><img id="large" src="" alt="基米照片大图"></div><div class="toast" id="toast" role="status"></div>
+<script>
+const sayings=["“先睡一觉，醒来再说喵。”","“摸摸可以，零食也要安排一下。”","“我不是在发呆，我在思考猫生。”","“今天的任务：可爱，然后继续可爱。”","“你忙你的，我负责治愈世界。”","“再睡五分钟……真的就五分钟。”","“本喵允许你继续欣赏我。”"];
+const quote=document.getElementById("quote");document.getElementById("quoteBtn").addEventListener("click",()=>{let s=sayings[Math.floor(Math.random()*sayings.length)];if(s===quote.textContent)s=sayings[(sayings.indexOf(s)+1)%sayings.length];quote.textContent=s;showToast("喵～今天也要开心！");});
+let count=0;document.getElementById("loveBtn").addEventListener("click",e=>{count++;document.getElementById("count").textContent=`已经摸摸了 ${count} 次`;const r=e.currentTarget.getBoundingClientRect();sprinkle(r.left+r.width/2,r.top);showToast(["喵～基米收到你的爱啦！","呼噜呼噜～好舒服！","基米开心地甩了甩尾巴！"][count%3]);});
+function sprinkle(x,y){["🐾","💗","♡","🐾","💕"].forEach((s,i)=>{const el=document.createElement("span");el.className="float";el.textContent=s;el.style.left=(x+Math.random()*90-45)+"px";el.style.top=(y+Math.random()*12)+"px";el.style.animationDelay=(i*.07)+"s";document.body.appendChild(el);setTimeout(()=>el.remove(),1500);});}
+let timer;function showToast(s){const t=document.getElementById("toast");t.textContent=s;t.classList.add("show");clearTimeout(timer);timer=setTimeout(()=>t.classList.remove("show"),1700);}
+const lb=document.getElementById("lightbox"),large=document.getElementById("large");function openPhoto(card){large.src=card.dataset.full;large.alt=card.querySelector("img").alt;lb.classList.add("open");document.body.style.overflow="hidden";}function closePhoto(){lb.classList.remove("open");large.src="";document.body.style.overflow="";}
+document.querySelectorAll(".photo").forEach(card=>{card.addEventListener("click",()=>openPhoto(card));card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openPhoto(card);}});});document.getElementById("close").addEventListener("click",closePhoto);lb.addEventListener("click",e=>{if(e.target===lb)closePhoto();});document.addEventListener("keydown",e=>{if(e.key==="Escape")closePhoto();});
+</script></body></html>
